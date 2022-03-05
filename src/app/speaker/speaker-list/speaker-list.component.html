@@ -1,0 +1,37 @@
+<app-speaker-add [speaker]="speakerEditDetails" (speakerAdd)="addNewSpeaker($event)"></app-speaker-add>
+
+<button (click)="showImages()" >show images</button>|
+<label>filter</label>
+<input type="text"  [(ngModel)]="nameFilter" (ngModelChange)="filterChanged($event)">
+<table class="table table-bordered table-hover table-stripped" *ngIf="speakers.length>0">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Birth Date</th>
+      <th scope="col">Rate Hour</th>
+      <th scope="col" *ngIf="show==true">image</th>
+      <th scope="col">Rating</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr appHighLight="grey" *ngFor="let item of speakers|arraySplice:nameFilter ;let s=index;let f=even">
+      <td >{{item._id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.birthdate|date:'dd/MMMM'|uppercase}}</td>
+      <td>{{item.hourRate|currency}}</td>
+      <td *ngIf="show==true"><img src={{item.image}} width="20px" height="20px"></td>
+      <td>
+        <app-stars [rating]="item.rating"></app-stars>
+      </td>
+      <td>
+      <button  class="btn btn-primary" (click)="showDetails(item)"> Details</button> |
+      <button  class="btn btn-danger" (click)="delete(item._id)"> Delete</button> |
+      <button  class="btn btn-success" (click)="update(item)"> Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-speaker-details [speaker]="speakerDetails"></app-speaker-details>

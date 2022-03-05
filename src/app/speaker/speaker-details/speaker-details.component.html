@@ -1,0 +1,3 @@
+<div>
+  {{speaker._id}} , {{speaker.name}} , {{speaker.birthdate|date:'dd/MMMM'|uppercase}} , {{speaker.address}} ,{{speaker.hourRate}} , <img src={{speaker.image}} width="100px" height="100px" >, {{speaker.isMarried}} , {{speaker.government}} , <app-stars [rating]="speaker.rating"></app-stars>
+</div>

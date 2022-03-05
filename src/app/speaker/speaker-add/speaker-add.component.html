@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col">
+    <input type="text" [(ngModel)]="speaker._id" class="form-control" placeholder="id" aria-label="id" >
+  </div>
+  <div class="col">
+    <input type="text" [(ngModel)]="speaker.name" class="form-control" placeholder="name" aria-label="name">
+  </div>
+  <div class="col">
+    <input type="date" [(ngModel)]="speaker.birthdate"  id="date" >
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <input type="text" [(ngModel)]="speaker.hourRate" class="form-control" placeholder="hour rate" aria-label="hourRate" >
+  </div>
+  <div class="col">
+    <input type="text" [(ngModel)]="speaker.address" class="form-control" placeholder="address" aria-label="address" >
+  </div>
+  <div class="col">
+    <label for="select">Images</label>
+    <select id="select" [(ngModel)]="speaker.image">
+      <option value="">Choose...</option>
+      <optgroup label="images">
+        <option value="../../assets/image1.jpeg">image1</option>
+        <option value="../../assets/image2.jpeg">image2</option>
+        <option value="../../assets/image3.jpeg">image3</option>
+      </optgroup>
+    </select>
+</div>
+  <div class="row">
+    <div class="col">
+      <label>
+        <input type="checkbox" [(ngModel)]="speaker.isMarried" >
+        Is Married
+      </label>
+    </div>
+    <div class="col">
+        <label for="select">government</label>
+        <select id="select" [(ngModel)]="speaker.government">
+          <option value="">Choose...</option>
+          <optgroup label="government">
+            <option value="alex">alex</option>
+            <option value="mansoura">mansoura</option>
+            <option value="smart">smart</option>
+          </optgroup>
+        </select>
+    </div>
+    <div class="col">
+      <label for="select">rating</label>
+      <select id="select" [(ngModel)]="speaker.rating">
+        <option value="">Choose...</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+      </select>
+  </div>
+    <div class="col">
+      <button (click)="addSpeaker()" >add</button>
+    </div>
+</div>

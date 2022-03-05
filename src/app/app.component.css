@@ -1,0 +1,7 @@
+.main{
+  left :300px;
+  top: 100px;
+  width: 75%;
+  position: absolute;
+  overflow-y: scroll;
+}
