@@ -3,6 +3,7 @@ import { Speaker } from './_models/Speaker';
 
 @Pipe({
   name: 'arraySplice',
+  pure: false,
 })
 export class ArraySplicePipe implements PipeTransform {
   transform(value: Array<Speaker>, sFilter: string): Array<Speaker> {

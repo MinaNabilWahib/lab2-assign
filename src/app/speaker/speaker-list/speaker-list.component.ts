@@ -52,7 +52,7 @@ export class SpeakerListComponent implements OnInit {
     this.speakerDetails = item;
   }
   update(item: Speaker) {
-    this.speakerEditDetails = item;
+    this.speakerEditDetails = { ...item };
   }
   delete(n: number) {
     if (confirm('are you sure')) {
